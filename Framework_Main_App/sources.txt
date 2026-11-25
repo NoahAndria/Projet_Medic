@@ -1,0 +1,9 @@
+src/main/java/repositories/PatientRepository.java
+src/main/java/entities/Patient.java
+src/main/java/entities/Jouet.java
+src/main/java/entities/CategorieJouet.java
+src/main/java/config/JpaConfig.java
+src/main/java/config/JpaUtil.java
+src/main/java/controllers/Test1Controller.java
+src/main/java/controllers/PatientController.java
+src/main/java/service/PatientService.java

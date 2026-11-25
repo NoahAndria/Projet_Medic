@@ -1,0 +1,393 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil - Patient</title>
+
+    <style>
+        :root {
+            --red: #e32838;
+            --red-dark: #bd1727;
+            --black: #141414;
+            --white: #ffffff;
+            --gray: #777777;
+            --border: #e7e7e7;
+            --background: #f5f5f5;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: var(--background);
+            font-family: Inter, "Segoe UI", Arial, sans-serif;
+            color: var(--black);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            min-height: 580px;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            box-shadow: 0 22px 70px rgba(0, 0, 0, 0.09);
+            animation: appear 0.6s ease;
+        }
+
+        /* LEFT PANEL */
+        .sidebar {
+            background: var(--black);
+            color: white;
+            padding: 45px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sidebar::after {
+            content: "";
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border: 65px solid rgba(227, 40, 56, 0.12);
+            border-radius: 50%;
+            bottom: -160px;
+            right: -160px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 18px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .brand-icon {
+            width: 39px;
+            height: 39px;
+            background: var(--red);
+            border-radius: 10px;
+            display: grid;
+            place-items: center;
+            color: white;
+            font-size: 28px;
+            font-weight: 400;
+        }
+
+        .sidebar-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .sidebar-tag {
+            color: #ff6975;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .sidebar h1 {
+            font-size: clamp(34px, 4vw, 49px);
+            line-height: 1.12;
+            letter-spacing: -1.8px;
+            margin: 20px 0;
+        }
+
+        .sidebar h1 span {
+            color: var(--red);
+        }
+
+        .sidebar p {
+            color: #a9a9a9;
+            font-size: 14px;
+            line-height: 1.8;
+            max-width: 310px;
+        }
+
+        .sidebar-footer {
+            font-size: 11px;
+            letter-spacing: 1px;
+            color: #777;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* RIGHT PANEL */
+        .form-section {
+            padding: 55px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .badge {
+            display: inline-block;
+            width: fit-content;
+            padding: 8px 13px;
+            background: #fff0f1;
+            color: var(--red);
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .form-section h2 {
+            margin: 20px 0 8px;
+            font-size: 30px;
+            letter-spacing: -1px;
+            font-weight: 800;
+        }
+
+        .subtitle {
+            color: var(--gray);
+            font-size: 14px;
+            margin: 0 0 35px;
+            line-height: 1.6;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 23px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+        }
+
+        label {
+            font-size: 12px;
+            font-weight: 700;
+            color: #333;
+            letter-spacing: 0.2px;
+        }
+
+        input {
+            width: 100%;
+            height: 52px;
+            padding: 0 16px;
+            border: 1.5px solid var(--border);
+            border-radius: 9px;
+            font-size: 14px;
+            font-family: inherit;
+            color: var(--black);
+            background: #fafafa;
+            outline: none;
+            transition: all 0.25s ease;
+        }
+
+        input::placeholder {
+            color: #aaa;
+        }
+
+        input:hover {
+            border-color: #c9c9c9;
+        }
+
+        input:focus {
+            border-color: var(--red);
+            background: white;
+            box-shadow: 0 0 0 4px rgba(227, 40, 56, 0.08);
+        }
+
+        button {
+            margin-top: 12px;
+            width: 100%;
+            height: 54px;
+            border: none;
+            border-radius: 9px;
+            background: var(--red);
+            color: white;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.25s ease;
+        }
+
+        button:hover {
+            background: var(--red-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 9px 22px rgba(227, 40, 56, 0.24);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .form-footer {
+            margin-top: 26px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #999;
+            font-size: 11px;
+            text-align: center;
+        }
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 760px) {
+            body {
+                padding: 15px;
+            }
+
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                min-height: 230px;
+                padding: 30px;
+            }
+
+            .sidebar h1 {
+                font-size: 30px;
+                margin: 12px 0;
+            }
+
+            .sidebar-footer {
+                display: none;
+            }
+
+            .form-section {
+                padding: 35px 25px;
+            }
+
+            .form-section h2 {
+                font-size: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- LEFT PANEL -->
+        <aside class="sidebar">
+
+            <div class="brand">
+                <div class="brand-icon">+</div>
+                <span>NAF<span style="color:#e32838;">.</span></span>
+            </div>
+
+            <div class="sidebar-content">
+                <div class="sidebar-tag">
+                    Gestion des patients
+                </div>
+
+                <h1>
+                    Chaque patient<br>
+                    <span>compte.</span>
+                </h1>
+
+                <p>
+                    Une interface simple et moderne pour
+                    enregistrer et organiser les informations
+                    de vos patients.
+                </p>
+            </div>
+
+            <div class="sidebar-footer">
+                NAF FRAMEWORK &nbsp; / &nbsp; PATIENT MANAGEMENT
+            </div>
+
+        </aside>
+
+        <!-- RIGHT PANEL -->
+        <main class="form-section">
+
+            <span class="badge">+ NOUVEAU PATIENT</span>
+
+            <h2>Informations du patient</h2>
+
+            <p class="subtitle">
+                Veuillez renseigner les informations
+                ci-dessous pour créer un nouveau dossier.
+            </p>
+
+            <form action="patient/save" method="GET">
+
+                <div class="form-group">
+                    <label for="nom">Nom</label>
+                    <input
+                        id="nom"
+                        name="p.nom"
+                        type="text"
+                        placeholder="Ex : Rakoto"
+                        autocomplete="family-name"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="prenom">Prénom</label>
+                    <input
+                        id="prenom"
+                        name="p.prenom"
+                        type="text"
+                        placeholder="Ex : Jean"
+                        autocomplete="given-name"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="naissance">Date de naissance</label>
+                    <input
+                        id="naissance"
+                        name="p.date_naissance"
+                        type="date"
+                        autocomplete="bday"
+                        required>
+                </div>
+
+                <button type="submit">
+                    Envoyer
+                    <span aria-hidden="true">→</span>
+                </button>
+
+            </form>
+
+            <div class="form-footer">
+                Patient Management • Propulsé par Naf Framework
+            </div>
+
+        </main>
+
+    </div>
+
+</body>
+</html>
