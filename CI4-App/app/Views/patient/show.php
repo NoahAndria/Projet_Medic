@@ -106,13 +106,13 @@
         }
 
         .label {
-            color: #64748b;
+            color: #b1d2ff;
             font-size: 13px;
             margin-bottom: 8px;
         }
 
         .value {
-            color: #10233f;
+            color: #0d1c32;
             font-size: 17px;
             font-weight: bold;
             overflow-wrap: anywhere;
@@ -121,7 +121,7 @@
         .footer {
             margin-top: 28px;
             text-align: center;
-            color: #64748b;
+            color: #3f4a59;
             font-size: 13px;
         }
 
@@ -169,10 +169,6 @@
                 <div class="subtitle">
                     Informations du patient
                 </div>
-
-                <div class="patient-id">
-                    #<?= esc($patient['id']) ?>
-                </div>
             </div>
 
         </div>
@@ -204,6 +200,19 @@
                 <div class="label">Date de naissance</div>
                 <div class="value">
                     <?= esc($patient['date_naissance']) ?>
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="label">CIN</div>
+                <div class="value">
+                    <?= esc($patient['cin']) ?>
+                </div>
+            </div>
+            <div class="field">
+                <div class="label">Sexe</div>
+                <div class="value">
+                    <?= esc($patient['sexe']) ?>
                 </div>
             </div>
 

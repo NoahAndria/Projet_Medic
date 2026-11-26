@@ -374,6 +374,21 @@
                         required>
                 </div>
 
+                <div class="form-group">
+                    <label for="CIN">CIN</label>
+                    <input id="CIN" name="p.CIN" type="text" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="sexe">sexe</label>
+                    <select name="p.sexe" id="sexe">
+                        <option value = "H">Homme</option>
+                        <option value = "F">Femme</option>
+                    </select>
+                </div>
+
+                
+
                 <button type="submit">
                     Envoyer
                     <span aria-hidden="true">→</span>

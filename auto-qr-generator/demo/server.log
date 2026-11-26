@@ -8,27 +8,14 @@
 
  :: Spring Boot ::                (v4.2.0)
 
-2026-11-25T22:35:33.842+03:00  INFO 28622 --- [qr-generator] [           main] com.example.QrApplication                : Starting QrApplication v0.0.1-SNAPSHOT using Java 21.0.13.0.3 with PID 28622 (/home/noah/S5/Mini-Projet Patient/auto-qr-generator/demo/target/demo-0.0.1-SNAPSHOT.jar started by noah in /home/noah/S5/Mini-Projet Patient/auto-qr-generator/demo)
-2026-11-25T22:35:33.845+03:00  INFO 28622 --- [qr-generator] [           main] com.example.QrApplication                : No active profile set, falling back to 1 default profile: "default"
-2026-11-25T22:35:34.429+03:00  INFO 28622 --- [qr-generator] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8090 (http)
-2026-11-25T22:35:34.437+03:00  INFO 28622 --- [qr-generator] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-11-25T22:35:34.437+03:00  INFO 28622 --- [qr-generator] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.27]
-2026-11-25T22:35:34.451+03:00  INFO 28622 --- [qr-generator] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 563 ms
-2026-11-25T22:35:34.653+03:00  WARN 28622 --- [qr-generator] [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
-2026-11-25T22:35:34.660+03:00  INFO 28622 --- [qr-generator] [           main] .s.b.a.l.ConditionEvaluationReportLogger : 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2026-11-25T22:35:34.666+03:00 ERROR 28622 --- [qr-generator] [           main] o.s.b.d.LoggingFailureAnalysisReporter   : 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Web server failed to start. Port 8090 was already in use.
-
-Action:
-
-Identify and stop the process that's listening on port 8090 or configure this application to listen on another port.
-
+2026-11-26T15:47:49.947+03:00  INFO 10748 --- [qr-generator] [           main] com.example.QrApplication                : Starting QrApplication v0.0.1-SNAPSHOT using Java 21.0.13.0.3 with PID 10748 (/home/noah/S5/Mini-Projet Patient/auto-qr-generator/demo/target/demo-0.0.1-SNAPSHOT.jar started by noah in /home/noah/S5/Mini-Projet Patient/auto-qr-generator/demo)
+2026-11-26T15:47:49.949+03:00  INFO 10748 --- [qr-generator] [           main] com.example.QrApplication                : No active profile set, falling back to 1 default profile: "default"
+2026-11-26T15:47:50.448+03:00  INFO 10748 --- [qr-generator] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8090 (http)
+2026-11-26T15:47:50.457+03:00  INFO 10748 --- [qr-generator] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-11-26T15:47:50.457+03:00  INFO 10748 --- [qr-generator] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.27]
+2026-11-26T15:47:50.472+03:00  INFO 10748 --- [qr-generator] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 496 ms
+2026-11-26T15:47:50.713+03:00  INFO 10748 --- [qr-generator] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8090 (http) with context path '/'
+2026-11-26T15:47:50.724+03:00  INFO 10748 --- [qr-generator] [           main] com.example.QrApplication                : Started QrApplication in 0.97 seconds (process running for 1.185)
+2026-11-26T15:47:51.585+03:00  INFO 10748 --- [qr-generator] [nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-11-26T15:47:51.585+03:00  INFO 10748 --- [qr-generator] [nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-11-26T15:47:51.586+03:00  INFO 10748 --- [qr-generator] [nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms

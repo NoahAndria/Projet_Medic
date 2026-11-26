@@ -26,6 +26,12 @@ public class Patient {
     @Column(name = "date_naissance", nullable = false)
     private LocalDate date_naissance;
 
+    @Column(name = "CIN", nullable = false)
+    private String CIN;    
+
+    @Column(name = "sexe", nullable = false)
+    private String sexe;
+
     public Patient() {
     }
 
@@ -65,4 +71,21 @@ public class Patient {
     public void setDate_naissance(LocalDate date_naissance) {
         this.date_naissance = date_naissance;
     }
+
+    public String getCIN() {
+        return CIN;
+    }
+
+    public void setCIN(String CIN) {
+        this.CIN = CIN;
+    }
+
+    public String getSexe() {
+        return sexe;
+    }
+
+    public void setSexe(String sexe) {
+        this.sexe = sexe;
+    }
+
 }
