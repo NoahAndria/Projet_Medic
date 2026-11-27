@@ -295,6 +295,11 @@
 
 <body>
 
+<%
+
+    String contextPath = request.getContextPath();
+%>
+
     <div class="container">
 
         <!-- LEFT PANEL -->
@@ -311,8 +316,8 @@
                 </div>
 
                 <h1>
-                    Chaque patient<br>
-                    <span>compte.</span>
+                    Fiche de<br>
+                    <span>creation.</span>
                 </h1>
 
                 <p>
@@ -322,13 +327,9 @@
                 </p>
             </div>
 
-            <div class="sidebar-footer">
-                NAF FRAMEWORK &nbsp; / &nbsp; PATIENT MANAGEMENT
-            </div>
-
         </aside>
 
-        <!-- RIGHT PANEL -->
+      
         <main class="form-section">
 
             <span class="badge">+ NOUVEAU PATIENT</span>
@@ -340,7 +341,7 @@
                 ci-dessous pour créer un nouveau dossier.
             </p>
 
-            <form action="patient/save" method="GET">
+            <form action="<%= contextPath %>/patient/save" method="GET">
 
                 <div class="form-group">
                     <label for="nom">Nom</label>

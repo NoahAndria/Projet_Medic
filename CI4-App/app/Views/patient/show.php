@@ -160,6 +160,8 @@
                 <?= esc(strtoupper(substr($patient['prenom'], 0, 1))) ?>
             </div>
 
+
+
             <div>
                 <h1>
                     <?= esc($patient['prenom']) ?>
@@ -181,6 +183,7 @@
                     <?= esc($patient['id']) ?>
                 </div>
             </div>
+            
 
             <div class="field">
                 <div class="label">Nom</div>
@@ -216,10 +219,13 @@
                 </div>
             </div>
 
+            <div class="avatar">
+            <img src="<?php echo "http://medic.cdn/" . $patient['id'] . "/QrCode/" . $patient['id'] . "QrCode" ?>" alt="Patient Image" style="width: 100%; border-radius: 10px; margin-bottom: 20px;">
+            </div>
         </div>
 
     </div>
-
+    
     <div class="footer">
         Patient Portal — Informations personnelles
     </div>

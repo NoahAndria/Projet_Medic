@@ -19,3 +19,5 @@
 2026-11-26T15:47:51.585+03:00  INFO 10748 --- [qr-generator] [nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2026-11-26T15:47:51.585+03:00  INFO 10748 --- [qr-generator] [nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2026-11-26T15:47:51.586+03:00  INFO 10748 --- [qr-generator] [nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-11-26T14:42:14.922+03:00  INFO 10748 --- [qr-generator] [ionShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-11-26T14:42:14.934+03:00  INFO 10748 --- [qr-generator] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete

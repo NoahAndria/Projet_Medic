@@ -21,11 +21,22 @@ public class PatientController {
 
     @UrlMapping(name = "/", method = "GET")
     public ModelView index() {
-        System.out.println("\n index in patientcontroller using get ");
+        System.out.println("\n viewPatient in patientcontroller using post ");
+        ModelView mv = new ModelView("patient/viewAll");
+        PatientService patientService = new PatientService();
+        List<Patient> patients = patientService.getAllPatients();
+        mv.addAttribute("patients", patients);
+        return mv;
+    }
+
+    @UrlMapping(name = "/patient/new", method = "GET")
+    public ModelView insertPatient() {
+        System.out.println("\n viewPatient in patientcontroller using post ");
         ModelView mv = new ModelView("index");
 
         return mv;
     }
+
 
     @UrlMapping(name = "/patient/save", method = "GET")
     public ModelView savePatient(Patient p) {
@@ -33,6 +44,44 @@ public class PatientController {
         ModelView mv = new ModelView("index");
         PatientService patientService = new PatientService();
         patientService.savePatient(p);
+        return mv;
+    }
+
+    @UrlMapping(name = "/patient/delete", method = "GET")
+    public ModelView deletePatient(Long id) {
+        System.out.println("\n deletePatient in patientcontroller using post ");
+        PatientService patientService = new PatientService();
+        Patient p = patientService.getPatientById(id);
+        patientService.deletePatient(p);
+
+        ModelView mv = new ModelView("patient/viewAll");
+
+        List<Patient> patients = patientService.getAllPatients();
+        mv.addAttribute("patients", patients);
+        return mv;
+    }
+
+    @UrlMapping(name = "/patient/view", method = "GET")
+    public ModelView viewPatient(Long id) {
+        System.out.println("\n viewPatient in patientcontroller using post ");
+        ModelView mv = new ModelView("patient/view");
+        PatientService patientService = new PatientService();
+        Patient p = patientService.getPatientById(id);
+        mv.addAttribute("patient", p);
+        return mv;
+    }
+
+    @UrlMapping(name = "/patient/update", method = "GET")
+    public ModelView viewPatient(Patient p) {
+        System.out.println("\n viewPatient in patientcontroller using post ");
+
+        PatientService patientService = new PatientService();
+        patientService.savePatient(p);
+
+        ModelView mv = new ModelView("patient/viewAll");
+
+        List<Patient> patients = patientService.getAllPatients();
+        mv.addAttribute("patients", patients);
         return mv;
     }
 

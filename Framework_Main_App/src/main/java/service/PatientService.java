@@ -18,6 +18,18 @@ public class PatientService {
         patientRepository.save(patient);
     }
 
+    public void deletePatientById(Long id) {
+        Patient patient = getPatientById(id);
+        if (patient != null) {
+            deletePatient(patient);
+        }
+    }
+
+    public void deletePatient(Patient patient) {
+        patientRepository.delete(patient);
+    }
+    
+
     public Patient getPatientById(Long id) {
         return patientRepository.findById(id).orElse(null);
     }
