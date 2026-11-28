@@ -389,8 +389,21 @@
                 <div class="form-group">
                     <label for="sexe">sexe</label>
                     <select name="p.sexe" id="sexe">
+                    <%
+                        String sexe =  p.getSexe();
+                        if(sexe.equals("H")){
+                    %>
                         <option value = "H">Homme</option>
                         <option value = "F">Femme</option>
+                    <%
+                        } else {
+                    %>
+                        <option value = "F">Femme</option>
+                        <option value = "H">Homme</option>
+                    <%
+                        }
+                    %>
+
                     </select>
                 </div>
 
