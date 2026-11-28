@@ -398,7 +398,7 @@
             </form>
 
             <div class="form-footer">
-                Patient Management • Propulsé par Naf Framework
+                Patient Management 
             </div>
 
         </main>

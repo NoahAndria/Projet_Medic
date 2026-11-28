@@ -426,7 +426,7 @@
         </div>
 
         <div class="card-footer">
-            NAF Framework — Gestion des dossiers médicaux
+            Gestion des dossiers médicaux
         </div>
 
     </div>
